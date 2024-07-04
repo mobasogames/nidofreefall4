@@ -29,14 +29,14 @@
     <div id="unity-warning"></div>
     <div id="unity-footer">
       <div id="unity-webgl-logo"></div>
-      <div id="unity-fullscreen-button"></div>
+      <!-- Remove the fullscreen button div -->
+      <!-- <div id="unity-fullscreen-button"></div> -->
       <div id="unity-build-title">Nido Free Fall</div>
     </div>
   </div>
   <script>
     var container = document.querySelector("#unity-container");
     var canvas = document.querySelector("#unity-canvas");
-    var fullscreenButton = document.querySelector("#unity-fullscreen-button");
     var warningBanner = document.querySelector("#unity-warning");
 
     function unityShowBanner(msg, type) {
@@ -90,9 +90,7 @@
       createUnityInstance(canvas, config, (progress) => {
         // Optional: Handle progress if needed
       }).then((unityInstance) => {
-        fullscreenButton.onclick = () => {
-          unityInstance.SetFullscreen(1);
-        };
+        // No fullscreen button logic here
       }).catch((message) => {
         alert(message);
       });
