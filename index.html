@@ -6,6 +6,7 @@
   <title>Nido Free Fall</title>
   <link rel="shortcut icon" href="TemplateData/favicon.ico">
   <link rel="stylesheet" href="TemplateData/style.css">
+  <!-- Bootstrap CSS -->
   <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body {
@@ -18,20 +19,24 @@
       background-color: #000;
       color: #fff;
       font-family: Arial, sans-serif;
+      height: 100vh;
     }
     #unity-container {
+      width: 100%;
+      height: 100%;
       display: flex;
       justify-content: center;
       align-items: center;
     }
     #unity-canvas {
       width: 100%;
-      height: auto;
-      max-width: 400px; 
-      max-height: 760px;
+      height: 100%;
+      max-width: 400px; /* Limit maximum width for better mobile display */
+      max-height: 760px; /* Limit maximum height for better mobile display */
+      object-fit: contain; /* Ensure the canvas maintains its aspect ratio */
     }
     #unity-footer {
-      display: none; /* Hide footer */
+      display: none; /* Hide footer on mobile */
     }
   </style>
 </head>
@@ -40,6 +45,7 @@
     <canvas id="unity-canvas" tabindex="-1"></canvas>
     <div id="unity-warning"></div>
   </div>
+  <!-- Bootstrap JS, Popper.js, and jQuery -->
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.3/dist/umd/popper.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
@@ -106,4 +112,3 @@
   </script>
 </body>
 </html>
-
