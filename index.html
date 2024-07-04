@@ -67,12 +67,18 @@
         canvas.style.height = "760px";
       }
 
+      // Commented out the loading bar display
+      // loadingBar.style.display = "block";
+
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
-          // Progress handling (if needed) can be re-added here
+          // Commented out progress bar updates
+          // progressBarFull.style.width = 100 * progress + "%";
         }).then((unityInstance) => {
+          // Commented out the loading bar hide action
+          // loadingBar.style.display = "none";
           fullscreenButton.onclick = () => {
             unityInstance.SetFullscreen(1);
           };
